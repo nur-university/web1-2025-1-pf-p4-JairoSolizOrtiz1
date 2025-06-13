@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversaciones | Mercatodo</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/chats.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .tab.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container navbar__container">
+            <a href="home.html" class="navbar__logo">Mercatodo</a>
+            <button class="navbar__toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="navbar__menu" id="navbarMenu">
+                <a href="formAnuncio.html" class="navbar__link">Crear anuncio</a>
+                <a href="misAnuncios.html" class="navbar__link">Mis anuncios</a>
+                <a href="guardados.html" class="navbar__link">Guardados</a>
+                <div class="navbar__messages">
+                    <a href="chats.html" class="navbar__link">Mensajes</a>
+                    <span class="notification-badge">1</span>
+                </div>
+                <div class="navbar__user" id="userMenuToggle">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" id="logoutBtn">Cerrar sesión</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="chats">
+        <div class="container">
+            <h2>Mis conversaciones</h2>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="comprador">Como comprador</button>
+                <button class="tab" data-tab="vendedor">Como vendedor</button>
+            </div>
+
+            <div class="filters">
+                <select id="filterCategoria">
+                    <option value="all">Todas las categorías</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Muebles">Muebles</option>
+                    <option value="Moda">Moda</option>
+                </select>
+
+                <select id="filterLeido">
+                    <option value="all">Todos</option>
+                    <option value="unread">No leídos</option>
+                    <option value="read">Leídos</option>
+                </select>
+            </div>
+
+            <div id="chats-comprador" class="chat-list">
+                <div class="chat-item unread" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/lenovo.jpg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Portátil Lenovo</h4>
+                        <p class="chat-item__user">Vendedor: Juan Pérez</p>
+                        <p class="chat-item__msg">Hola, ¿todavía está disponible?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/sofaL.jpg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Sofá en L</h4>
+                        <p class="chat-item__user">Vendedora: Diana</p>
+                        <p class="chat-item__msg">¿Me lo puedes reservar?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/telefono.jpeg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>iPhone 12</h4>
+                        <p class="chat-item__user">Vendedora: Rosa</p>
+                        <p class="chat-item__msg">¿Qué tal está la batería?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/zaptitos.jpeg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Zapatos nuevos</h4>
+                        <p class="chat-item__user">Vendedor: Diego</p>
+                        <p class="chat-item__msg">¿Son talla 40?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/sofaL.jpg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Sofá beige</h4>
+                        <p class="chat-item__user">Vendedora: Diana</p>
+                        <p class="chat-item__msg">¿Cuánto mide exactamente?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chats-vendedor" class="chat-list hidden">
+                <div class="chat-item unread" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/bolsa.jpg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Bicicleta de montaña</h4>
+                        <p class="chat-item__user">Compradora: Laura Gómez</p>
+                        <p class="chat-item__msg">¿Podrías hacer una rebaja?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/telefono.jpeg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>iPhone 12</h4>
+                        <p class="chat-item__user">Compradora: Ana Ruiz</p>
+                        <p class="chat-item__msg">¿Tiene golpes o rayones?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/zaptitos.jpeg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Zapatos nuevos</h4>
+                        <p class="chat-item__user">Compradora: Ana Ruiz</p>
+                        <p class="chat-item__msg">¿Hay más colores disponibles?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/lenovo.jpg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Laptop Asus i7</h4>
+                        <p class="chat-item__user">Comprador: Pedro Torres</p>
+                        <p class="chat-item__msg">¿Tiene garantía aún?</p>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="window.location.href='chat.html'">
+                    <img src="../img/anuncios/sofaL.jpg" class="chat-item__img" alt="Producto" />
+                    <div class="chat-item__info">
+                        <h4>Sofá gris reclinable</h4>
+                        <p class="chat-item__user">Comprador: Pedro Torres</p>
+                        <p class="chat-item__msg">¿En qué ciudad estás?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navbarMenu').classList.toggle('navbar__menu--active');
+        });
+
+        const tabs = document.querySelectorAll('.tab');
+        const compradorChats = document.getElementById('chats-comprador');
+        const vendedorChats = document.getElementById('chats-vendedor');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                if (tab.dataset.tab === 'comprador') {
+                    compradorChats.classList.remove('hidden');
+                    vendedorChats.classList.add('hidden');
+                } else {
+                    compradorChats.classList.add('hidden');
+                    vendedorChats.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
